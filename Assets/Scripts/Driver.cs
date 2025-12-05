@@ -36,14 +36,21 @@ public class Driver : MonoBehaviour
     }    
     private void ProcessHit(DmgDealer damageDealer)
     {
+        if (health <= 0) { 
+            Destroy(gameObject);
+            return;
+        }
+        if (damageDealer == null) { return; }
         health -= damageDealer.GetDamage();  
         damageDealer.Hit();
-        //AudioSource.PlayClipAtPoint(carHitSound, Camera.main.transform.position, carHitSoundVolume);
+        AudioSource.PlayClipAtPoint(carHitSound, Camera.main.transform.position, carHitSoundVolume);
+        
 
     }    
     private void OnTriggerEnter2D(Collider2D other)
     {
         DmgDealer damageDealer = other.gameObject.GetComponent<DmgDealer>();
         ProcessHit(damageDealer);
+        
     }
 }

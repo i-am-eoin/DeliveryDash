@@ -2,15 +2,12 @@ using UnityEngine;
 
 public class Money : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] AudioClip pickupSound;
+    [SerializeField] [Range(0, 1)] float pickupVolume = 0.75f;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.name.Equals("MoneyShredder")) { return; }
+        Destroy(this.gameObject);      
+        AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position, pickupVolume);
     }
 }

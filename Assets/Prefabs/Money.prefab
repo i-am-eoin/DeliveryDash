@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6043066599586794150}
   - component: {fileID: -7852754527559450075}
   - component: {fileID: 6126146215610218013}
-  m_Layer: 0
+  - component: {fileID: 2228905403464232931}
+  m_Layer: 8
   m_Name: Money
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,3 +163,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.16, y: 0.08}
   m_EdgeRadius: 0
+--- !u!114 &2228905403464232931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632448163526281076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3487d0a55897b77478467ad786abe0bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupSound: {fileID: 8300000, guid: b9c612bd1c4fbee4cb642d1c1e046636, type: 3}
+  pickupVolume: 0.75

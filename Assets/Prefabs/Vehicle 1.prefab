@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 20651484393714342}
   - component: {fileID: -5400153249584953562}
   - component: {fileID: 70518802153902173}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vehicle 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

@@ -5,6 +5,7 @@ public class CashSpawner : MonoBehaviour
 {
 
     [SerializeField] int amountToSpawn = 10;
+    [SerializeField] float minTimeBetweenSpawn = 0f;
     [SerializeField] float maxTimeBetweenSpawn = 10f;
     [SerializeField] GameObject cashPrefab;
     [SerializeField] float borderL = -8f;
