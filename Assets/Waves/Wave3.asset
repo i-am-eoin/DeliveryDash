@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785ed01f945760043b43182751b0fb33, type: 3}
+  m_Name: Wave3
+  m_EditorClassIdentifier: 
+  carPrefab: {fileID: 6613059169779645519, guid: 16927aff87ede3e4aaa7e72ca14da0a7, type: 3}
+  pathPrefab: {fileID: 6141954110441918643, guid: 4b889588d710ed1438b7bfa5a6ddc720, type: 3}
+  timeBetweenSpawns: 1
+  spawnRandomFactor: 0.3
+  numberOfCars: 5
+  carSpeed: 5

@@ -4,6 +4,9 @@ public class Driver : MonoBehaviour
 {
     [SerializeField] float speed = 10f;
     [SerializeField] float padding = 1.4f;
+    [SerializeField] int health = 100;
+    [SerializeField] AudioClip carHitSound;
+    [SerializeField] [Range(0, 1)] float carHitSoundVolume = 0.75f;
 
     float xMin;
     float xMax;
@@ -30,5 +33,17 @@ public class Driver : MonoBehaviour
         Camera gameCamera = Camera.main;
         xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0)).x + padding;
         xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0)).x - padding;
+    }    
+    private void ProcessHit(DmgDealer damageDealer)
+    {
+        health -= damageDealer.GetDamage();  
+        damageDealer.Hit();
+        //AudioSource.PlayClipAtPoint(carHitSound, Camera.main.transform.position, carHitSoundVolume);
+
+    }    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        DmgDealer damageDealer = other.gameObject.GetComponent<DmgDealer>();
+        ProcessHit(damageDealer);
     }
 }

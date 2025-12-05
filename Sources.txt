@@ -1,0 +1,4 @@
+Sources:
+Background music - Drift Music Pack by JHawk Studios. https://jhawk-studios.itch.io/the-free-music-store
+Pickup sound - Coin Pickup Sound V 0.2 by Davidsraba  https://freesound.org/people/Davidsraba/sounds/347174/
+Vehicle sprites - Road To Rage - Open source assets   https://tmdstudios.wordpress.com
