@@ -19,6 +19,10 @@ public class Driver : MonoBehaviour
     void Update()
     {
         Move();
+        if (health <= 0) { 
+            Destroy(gameObject);
+            return;
+        }
     }
 
     private void Move()

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 20651484393714342}
   - component: {fileID: -5400153249584953562}
   - component: {fileID: 70518802153902173}
+  - component: {fileID: -738063916020356549}
   m_Layer: 7
   m_Name: Vehicle 1
   m_TagString: Untagged
@@ -167,3 +168,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+--- !u!114 &-738063916020356549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2426041320783721099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17632f0209088314e98a3551749f9ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minTimeBetweenShots: 0.2
+  maxTimeBetweenShots: 3
+  bulletPrefab: {fileID: 5690735730311483844, guid: 6fbf7d8a776188c46a5207085eaf2185, type: 3}
+  bulletSpeed: 10
+  bulletSound: {fileID: 8300000, guid: d73f760dfff031c46a66c5f851207a64, type: 3}
+  bulletSoundVolume: 0.3

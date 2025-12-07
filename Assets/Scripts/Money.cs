@@ -7,6 +7,7 @@ public class Money : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name.Equals("MoneyShredder")) { return; }
+        if (collision.gameObject.name.Equals("Banana(Clone)")) { return; }
         Destroy(this.gameObject);      
         AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position, pickupVolume);
     }
