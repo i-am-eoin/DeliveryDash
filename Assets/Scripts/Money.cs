@@ -8,7 +8,8 @@ public class Money : MonoBehaviour
     {
         if (collision.gameObject.name.Equals("MoneyShredder")) { return; }
         if (collision.gameObject.name.Equals("Banana(Clone)")) { return; }
-        Destroy(this.gameObject);      
+        collision.gameObject.GetComponent<Driver>().score += 5;
+        Destroy(gameObject);      
         AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position, pickupVolume);
     }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carPrefab: {fileID: 6613059169779645519, guid: 16927aff87ede3e4aaa7e72ca14da0a7, type: 3}
   pathPrefab: {fileID: 6141954110441918643, guid: 4b889588d710ed1438b7bfa5a6ddc720, type: 3}
-  timeBetweenSpawns: 1
+  timeBetweenSpawns: 3
   spawnRandomFactor: 0.3
-  numberOfCars: 5
-  carSpeed: 5
+  numberOfCars: 6
+  carSpeed: 4

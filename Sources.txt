@@ -3,3 +3,4 @@ Background music - Drift Music Pack by JHawk Studios. https://jhawk-studios.itch
 Pickup sound - Coin Pickup Sound V 0.2 by Davidsraba  https://freesound.org/people/Davidsraba/sounds/347174/
 Vehicle sprites - Road To Rage - Open source assets   https://tmdstudios.wordpress.com
 Car Hit sound -  by DRAGON-STUDIO from Pixabay     https://pixabay.com/sound-effects/car-crash-sound-376882/
+Explosion  VFX - Explosion Animations Pack by ansimuz https://ansimuz.itch.io/explosion-animations-pack

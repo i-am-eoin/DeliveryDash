@@ -4,13 +4,13 @@ public class Driver : MonoBehaviour
 {
     [SerializeField] float speed = 10f;
     [SerializeField] float padding = 1.4f;
-    [SerializeField] int health = 100;
+    [SerializeField] public int health = 100;
     [SerializeField] AudioClip carHitSound;
     [SerializeField] [Range(0, 1)] float carHitSoundVolume = 0.75f;
 
     float xMin;
     float xMax;
-
+    public int score = 0;
     void Start()
     {
         SetupMoveBoundaries();

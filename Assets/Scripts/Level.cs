@@ -5,12 +5,17 @@ public class Level : MonoBehaviour
 {
 public void LoadStart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu");
     }
 
-public void LoadGame()
+public void LoadLevel1()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Level1");
+    }
+    
+public void LoadLevel2()
+    {
+        SceneManager.LoadScene("Level2");
     }
 
 public void LoadGameOver()
