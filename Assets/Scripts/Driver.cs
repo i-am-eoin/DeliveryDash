@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro; 
 
 public class Driver : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class Driver : MonoBehaviour
     [SerializeField] public int health = 100;
     [SerializeField] AudioClip carHitSound;
     [SerializeField] [Range(0, 1)] float carHitSoundVolume = 0.75f;
+    [SerializeField] public TMP_Text scoreText;   
+    [SerializeField] public TMP_Text healthText;
 
     float xMin;
     float xMax;
@@ -18,9 +21,12 @@ public class Driver : MonoBehaviour
 
     void Update()
     {
+        scoreText.text = $"Score: {score}";
+        healthText.text = $"Health: {health}";
         Move();
         if (health <= 0) { 
             Destroy(gameObject);
+            //healthText.text = "Dead!";
             return;
         }
     }
