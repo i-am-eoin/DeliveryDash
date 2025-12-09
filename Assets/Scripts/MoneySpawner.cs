@@ -1,7 +1,7 @@
  using UnityEngine;
 using System.Collections;
 
-public class CashSpawner : MonoBehaviour
+public class MoneySpawner : MonoBehaviour
 {
 
     [SerializeField] int amountToSpawn = 10;

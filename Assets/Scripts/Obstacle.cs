@@ -10,10 +10,13 @@ public class Obstacle : MonoBehaviour
     [SerializeField] AudioClip bulletSound;
     [SerializeField] [Range(0, 1)] float bulletSoundVolume = 0.25f;
 
+    public int level;
+
 
 
     void Start()
     {
+        Debug.Log(level);
         shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
     }
 
