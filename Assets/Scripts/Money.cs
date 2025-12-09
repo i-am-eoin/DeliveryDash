@@ -6,10 +6,12 @@ public class Money : MonoBehaviour
     [SerializeField] [Range(0, 1)] float pickupVolume = 0.75f;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("MoneyShredder")) { return; }
-        if (collision.gameObject.name.Equals("Banana(Clone)")) { return; }
-        collision.gameObject.GetComponent<Driver>().score += 5;
-        Destroy(gameObject);      
-        AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position, pickupVolume);
+        var driver = collision.gameObject.GetComponent<Driver>();
+        if (driver != null)
+        {
+            driver.score += 5;
+            Destroy(gameObject); 
+            AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position, pickupVolume);
+        }     
     }
 }
