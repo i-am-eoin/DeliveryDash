@@ -107,6 +107,10 @@ MonoBehaviour:
   health: 100
   carHitSound: {fileID: 8300000, guid: d6513eb7cc5fc3a4db577e65fcae9537, type: 3}
   carHitSoundVolume: 0.75
+  scoreText: {fileID: 0}
+  healthText: {fileID: 0}
+  score: 0
+  dead: 0
 --- !u!50 &3878006849052462274
 Rigidbody2D:
   serializedVersion: 5

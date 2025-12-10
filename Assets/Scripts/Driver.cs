@@ -14,7 +14,7 @@ public class Driver : MonoBehaviour
     float xMin;
     float xMax;
     public int score = 0;
-    public int level = 1;
+    public bool dead = false;
     void Start()
     {
         SetupMoveBoundaries();
@@ -25,9 +25,8 @@ public class Driver : MonoBehaviour
         scoreText.text = $"Score: {score}";
         healthText.text = $"Health: {health}";
         Move();
-        if (health <= 0) { 
-            Destroy(gameObject);
-            //healthText.text = "Dead!";
+        if (health <= 0) {
+            dead = true;
             return;
         }
     }
@@ -47,16 +46,14 @@ public class Driver : MonoBehaviour
     }    
     private void ProcessHit(DmgDealer damageDealer)
     {
-        if (health <= 0) { 
-            Destroy(gameObject);
-            return;
-        }
         if (damageDealer == null) { return; }
-        health -= damageDealer.GetDamage();  
+        health -= damageDealer.GetDamage();
         damageDealer.Hit();
         AudioSource.PlayClipAtPoint(carHitSound, Camera.main.transform.position, carHitSoundVolume);
-        
-
+        if (health <= 0) {
+            dead = true;
+            return;
+        }
     }    
     private void OnTriggerEnter2D(Collider2D other)
     {

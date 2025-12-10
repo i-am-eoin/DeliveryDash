@@ -13,6 +13,7 @@ public class MoneySpawner : MonoBehaviour
     [SerializeField] float spawnerSpeed = 5f;
     [SerializeField] float cashFallSpeed = 3f;
     float direction = 1f;
+    public bool finished = false;
     void Start()
     {
         StartCoroutine(SpawnCash());
@@ -21,7 +22,7 @@ public class MoneySpawner : MonoBehaviour
     IEnumerator SpawnCash()
     {
         for(int i=0;i<amountToSpawn;i++) {
-            yield return new WaitForSeconds(Random.Range(0f, maxTimeBetweenSpawn));
+            yield return new WaitForSeconds(Random.Range(minTimeBetweenSpawn, maxTimeBetweenSpawn));
             float xPosition = Random.Range(borderL, borderR);
             Vector3 spawnPosition = new Vector3(xPosition, 9, 0f);
 
@@ -32,6 +33,8 @@ public class MoneySpawner : MonoBehaviour
             );
             cash.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, -cashFallSpeed);
         }
+        yield return new WaitForSeconds(5);
+        finished = true;
     }
     void Update()
     {

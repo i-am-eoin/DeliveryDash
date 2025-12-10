@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
@@ -7,21 +8,28 @@ public class Obstacle : MonoBehaviour
     [SerializeField] float maxTimeBetweenShots = 3f;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletSpeed = 3f;
+    [SerializeField] int level = 1;
     [SerializeField] AudioClip bulletSound;
     [SerializeField] [Range(0, 1)] float bulletSoundVolume = 0.25f;
 
-    public int level;
 
 
 
     void Start()
     {
-        Debug.Log(level);
+        if(level!=2)
+        {
+            return;
+        }
         shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
     }
 
     void Update()
     {
+        if(level!=2)
+        {
+            return;
+        }
         CountDownAndShoot();
     }
 

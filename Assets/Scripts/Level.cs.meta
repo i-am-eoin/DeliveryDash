@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: c9dde16c288491e41ad781b7551aa49f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - player: {fileID: 6165811810412113716, guid: e00347150362fb54e896cd862c7f4166, type: 3}
+  - moneySpawner: {fileID: 952037803589093372, guid: 0eb05513193004440afe65bac85d63b6, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

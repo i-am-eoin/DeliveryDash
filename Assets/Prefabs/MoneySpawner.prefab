@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6402555204087177975
+--- !u!1 &952037803589093372
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7485664755043857108}
-  - component: {fileID: 1426939482562015026}
+  - component: {fileID: 3758615324279172485}
+  - component: {fileID: 971852202163373081}
   m_Layer: 0
-  m_Name: Level
+  m_Name: MoneySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7485664755043857108
+--- !u!4 &3758615324279172485
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6402555204087177975}
+  m_GameObject: {fileID: 952037803589093372}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 10.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1426939482562015026
+--- !u!114 &971852202163373081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6402555204087177975}
+  m_GameObject: {fileID: 952037803589093372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9dde16c288491e41ad781b7551aa49f, type: 3}
+  m_Script: {fileID: 11500000, guid: b19bd7eb90878c345b575641b2f2882b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 6165811810412113716, guid: e00347150362fb54e896cd862c7f4166, type: 3}
-  moneySpawner: {fileID: 952037803589093372, guid: 0eb05513193004440afe65bac85d63b6, type: 3}
+  amountToSpawn: 10
+  minTimeBetweenSpawn: 3
+  maxTimeBetweenSpawn: 8
+  cashPrefab: {fileID: 632448163526281076, guid: 1029dc30abcfee74392cd27054747513, type: 3}
+  borderL: -3
+  borderR: 3
+  spawnerSpeed: 5
+  cashFallSpeed: 3
+  finished: 0

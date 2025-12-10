@@ -3,22 +3,40 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
-public void LoadStart()
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject moneySpawner;
+    public void Update()
+    {
+        if (player.GetComponent<Driver>().dead)
+        {
+            LoadGameOver();
+            return;
+        }
+        if (moneySpawner.GetComponent<MoneySpawner>().finished)
+        {
+            LevelIntermission();
+        }
+    }
+    public void LoadStart()
     {
         SceneManager.LoadScene("Menu");
     }
 
-public void LoadLevel1()
+    public void LoadLevel1()
     {
         SceneManager.LoadScene("Level1");
     }
     
-public void LoadLevel2()
+    public void LoadLevel2()
     {
         SceneManager.LoadScene("Level2");
     }
+    public void LevelIntermission()
+    {
+        SceneManager.LoadScene("LevelIntermission");
+    }
 
-public void LoadGameOver()
+    public void LoadGameOver()
     {
         SceneManager.LoadScene("GameOver");
     }
