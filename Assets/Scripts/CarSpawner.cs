@@ -4,13 +4,22 @@ using System.Collections.Generic;
 
 public class CarSpawner : MonoBehaviour
 {
-    [SerializeField] List<WaveConfig> waveConfigs;  
+    [SerializeField] List<WaveConfig> waveConfigs; 
+    [SerializeField] GameObject player; 
 
     IEnumerator Start()
     {
-        do {
-            yield return StartCoroutine(SpawnAllWaves());
-        } while (true);
+        if(player.GetComponent<Driver>().level == 1)
+        {
+            do {
+                yield return StartCoroutine(SpawnWaveL1());
+            } while (true);
+        } else
+        {
+            do {
+                yield return StartCoroutine(SpawnWaveL2());
+            } while (true);
+        }
     }
 
     IEnumerator SpawnCars(WaveConfig waveConfig)
@@ -25,10 +34,19 @@ public class CarSpawner : MonoBehaviour
             yield return new WaitForSeconds(waveConfig.GetTimeBetweenSpawns());
         }
     }
-
-    IEnumerator SpawnAllWaves()
+    IEnumerator SpawnWaveL1()
     {
-        for (int i=0;i<waveConfigs.Count;i++) {
+        for (int i=0;i<4;i++)
+        {
+            Debug.Log(i);
+            var currentWave = waveConfigs[i];
+            yield return StartCoroutine(SpawnCars(currentWave));
+            Debug.Log(currentWave);
+        }
+    }    IEnumerator SpawnWaveL2()
+    {
+        for (int i=0;i<2;i++)
+        {
             var currentWave = waveConfigs[i];
             yield return StartCoroutine(SpawnCars(currentWave));
         }

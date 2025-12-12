@@ -33,7 +33,7 @@ public class MoneySpawner : MonoBehaviour
             );
             cash.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, -cashFallSpeed);
         }
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(7);
         finished = true;
     }
     void Update()

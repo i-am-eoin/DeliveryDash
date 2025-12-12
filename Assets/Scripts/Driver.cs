@@ -15,6 +15,7 @@ public class Driver : MonoBehaviour
     float xMax;
     public int score = 0;
     public bool dead = false;
+    public int level = 1;
     void Start()
     {
         SetupMoveBoundaries();
