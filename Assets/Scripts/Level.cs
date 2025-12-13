@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,8 +16,10 @@ public class Level : MonoBehaviour
         if (moneySpawner.GetComponent<MoneySpawner>().finished)
         {
             LevelIntermission();
+            return; 
         }
     }
+
     public void LoadStart()
     {
         SceneManager.LoadScene("Menu");
@@ -30,6 +33,7 @@ public class Level : MonoBehaviour
     public void LoadLevel2()
     {
         SceneManager.LoadScene("Level2");
+
     }
     public void LevelIntermission()
     {

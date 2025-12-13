@@ -41,7 +41,6 @@ public class CarSpawner : MonoBehaviour
             Debug.Log(i);
             var currentWave = waveConfigs[i];
             yield return StartCoroutine(SpawnCars(currentWave));
-            Debug.Log(currentWave);
         }
     }    IEnumerator SpawnWaveL2()
     {
