@@ -27,6 +27,7 @@ public class Driver : MonoBehaviour
         healthText.text = $"Health: {health}";
         Move();
         if (health <= 0) {
+            StaticScoreAndHealth.score = score;
             dead = true;
             return;
         }
@@ -52,6 +53,7 @@ public class Driver : MonoBehaviour
         damageDealer.Hit();
         AudioSource.PlayClipAtPoint(carHitSound, Camera.main.transform.position, carHitSoundVolume);
         if (health <= 0) {
+            StaticScoreAndHealth.score = score;
             dead = true;
             return;
         }
