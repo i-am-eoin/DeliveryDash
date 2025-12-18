@@ -15,6 +15,11 @@ public class Level : MonoBehaviour
         }
         if (moneySpawner.GetComponent<MoneySpawner>().finished)
         {
+            if(player.GetComponent<Driver>().level == 2)
+            {
+                LoadWin();
+                return;
+            }
             StaticScoreAndHealth.score = player.GetComponent<Driver>().score;
             StaticScoreAndHealth.health = player.GetComponent<Driver>().health;
             LevelIntermission();
@@ -45,10 +50,18 @@ public class Level : MonoBehaviour
     public void LoadGameOver()
     {
         SceneManager.LoadScene("GameOver");
+    }    
+    public void LoadWin()
+    {
+        SceneManager.LoadScene("Win");
     }
 
     public void QuitGame()
     {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
         Application.Quit();
+        #endif
     }
 }

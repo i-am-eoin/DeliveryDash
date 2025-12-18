@@ -705,7 +705,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveConfigs:
   - {fileID: 11400000, guid: 7b71577731de3f840aaac4578678ba46, type: 2}
-  - {fileID: 11400000, guid: d27010c640f7a544f9ea0665ddcf589d, type: 2}
   player: {fileID: 6918256173765501985}
 --- !u!4 &1677570251
 Transform:
