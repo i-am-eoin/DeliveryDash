@@ -15,6 +15,8 @@ public class Level : MonoBehaviour
         }
         if (moneySpawner.GetComponent<MoneySpawner>().finished)
         {
+            StaticScoreAndHealth.score = player.GetComponent<Driver>().score;
+            StaticScoreAndHealth.health = player.GetComponent<Driver>().health;
             LevelIntermission();
             return; 
         }

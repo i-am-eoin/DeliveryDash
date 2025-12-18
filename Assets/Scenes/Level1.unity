@@ -942,7 +942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4308353618764330795, guid: e00347150362fb54e896cd862c7f4166, type: 3}
       propertyPath: health
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4308353618764330795, guid: e00347150362fb54e896cd862c7f4166, type: 3}
       propertyPath: scoreText
