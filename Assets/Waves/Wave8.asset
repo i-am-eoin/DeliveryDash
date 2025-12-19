@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 785ed01f945760043b43182751b0fb33, type: 3}
-  m_Name: Wave6
+  m_Name: Wave8
   m_EditorClassIdentifier: 
   carPrefab: {fileID: 3561219173155502593, guid: 3e7f2439350b9014c992360913aff8a7, type: 3}
-  pathPrefab: {fileID: 420733252921186569, guid: 887ff5e3064bdc442a7a86233dbc8d31, type: 3}
+  pathPrefab: {fileID: 220676684959230743, guid: 98312664a05d2464e8e28a0d879589c7, type: 3}
   timeBetweenSpawns: 3
   spawnRandomFactor: 0.7
   numberOfCars: 7
