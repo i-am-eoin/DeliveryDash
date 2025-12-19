@@ -894,7 +894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 971852202163373081, guid: 0eb05513193004440afe65bac85d63b6, type: 3}
       propertyPath: cashFallSpeed
-      value: 3.5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 971852202163373081, guid: 0eb05513193004440afe65bac85d63b6, type: 3}
       propertyPath: maxTimeBetweenSpawn
@@ -1003,7 +1003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4308353618764330795, guid: e00347150362fb54e896cd862c7f4166, type: 3}
       propertyPath: speed
-      value: 11
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4308353618764330795, guid: e00347150362fb54e896cd862c7f4166, type: 3}
       propertyPath: health

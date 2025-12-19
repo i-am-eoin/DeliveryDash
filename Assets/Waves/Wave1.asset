@@ -17,4 +17,4 @@ MonoBehaviour:
   timeBetweenSpawns: 2
   spawnRandomFactor: 0.3
   numberOfCars: 3
-  carSpeed: 4
+  carSpeed: 5

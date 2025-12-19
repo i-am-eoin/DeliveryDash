@@ -4,6 +4,6 @@ public class InfiniteBackground : MonoBehaviour
 {
     void Update()
     {
-        GetComponent<Renderer>().material.mainTextureOffset += new Vector2(0f, 0.3f) * Time.deltaTime;
+        GetComponent<Renderer>().material.mainTextureOffset += new Vector2(0f, 0.6f) * Time.deltaTime;
     }
 }
