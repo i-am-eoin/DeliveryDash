@@ -972,6 +972,10 @@ PrefabInstance:
       propertyPath: carExplosion
       value: 
       objectReference: {fileID: 6819755576234276619, guid: c498fdb653896794a91d7e773bac7513, type: 3}
+    - target: {fileID: 4308353618764330795, guid: e00347150362fb54e896cd862c7f4166, type: 3}
+      propertyPath: plrExplosion
+      value: 
+      objectReference: {fileID: 6819755576234276619, guid: 2f7921319a4ac5a4cac5fd645db4f30d, type: 3}
     - target: {fileID: 6165811810412113716, guid: e00347150362fb54e896cd862c7f4166, type: 3}
       propertyPath: m_Name
       value: Driver

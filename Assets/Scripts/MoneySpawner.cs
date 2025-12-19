@@ -14,6 +14,7 @@ public class MoneySpawner : MonoBehaviour
     [SerializeField] float cashFallSpeed = 3f;
     float direction = 1f;
     public bool finished = false;
+    GameObject lastCash;
     void Start()
     {
         StartCoroutine(SpawnCash());
@@ -32,8 +33,14 @@ public class MoneySpawner : MonoBehaviour
                 Quaternion.identity
             );
             cash.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, -cashFallSpeed);
+            lastCash = cash;
         }
-        yield return new WaitForSeconds(7);
+
+        while (lastCash != null)
+        {
+            yield return null;
+        }
+
         finished = true;
     }
     void Update()

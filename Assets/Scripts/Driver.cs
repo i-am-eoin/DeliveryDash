@@ -1,5 +1,6 @@
 using UnityEngine;
-using TMPro; 
+using System.Collections;
+using TMPro;
 
 public class Driver : MonoBehaviour
 {
@@ -11,11 +12,13 @@ public class Driver : MonoBehaviour
     [SerializeField] public TMP_Text scoreText;   
     [SerializeField] public TMP_Text healthText;
     [SerializeField] GameObject carExplosion;
+    [SerializeField] GameObject plrExplosion;
 
     float xMin;
     float xMax;
     public int score = 0;
     public bool dead = false;
+    bool deathStarted = false;
     public int level = 1;
     void Start()
     {
@@ -24,14 +27,16 @@ public class Driver : MonoBehaviour
 
     void Update()
     {
-        scoreText.text = $"Score: {score}";
-        healthText.text = $"Health: {health}";
-        Move();
-        if (health <= 0) {
-            StaticScoreAndHealth.score = score;
-            StaticScoreAndHealth.health = health;
-            dead = true;
-            return;
+        if (!deathStarted)
+        {
+            scoreText.text = $"Score: {score}";
+            healthText.text = $"Health: {health}";
+            Move();
+        }
+
+        if (health <= 0 && !deathStarted)
+        {
+            StartCoroutine(DeathSequence());
         }
     }
 
@@ -59,13 +64,24 @@ public class Driver : MonoBehaviour
         StaticScoreAndHealth.health = health;
         damageDealer.Hit();
         AudioSource.PlayClipAtPoint(carHitSound, Camera.main.transform.position, carHitSoundVolume);
-        if (health <= 0) {
-            StaticScoreAndHealth.score = score;
-            StaticScoreAndHealth.health = health;
-            dead = true;
-            return;
+
+        if (health <= 0 && !deathStarted) {
+            StartCoroutine(DeathSequence());
         }
     }    
+
+    IEnumerator DeathSequence()
+    {
+        deathStarted = true;
+        GetComponent<SpriteRenderer>().enabled = false;
+        healthText.text = $"Dead!";
+        GameObject explosion = Instantiate(plrExplosion, transform.position, Quaternion.identity);
+        Destroy(explosion, 1f);
+        yield return new WaitForSeconds(1f);
+        StaticScoreAndHealth.score = score;
+        StaticScoreAndHealth.health = health;
+        dead = true;
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         DmgDealer damageDealer = other.gameObject.GetComponent<DmgDealer>();
