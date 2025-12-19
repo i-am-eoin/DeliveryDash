@@ -10,6 +10,7 @@ public class Driver : MonoBehaviour
     [SerializeField] [Range(0, 1)] float carHitSoundVolume = 0.75f;
     [SerializeField] public TMP_Text scoreText;   
     [SerializeField] public TMP_Text healthText;
+    [SerializeField] GameObject carExplosion;
 
     float xMin;
     float xMax;
@@ -47,9 +48,13 @@ public class Driver : MonoBehaviour
         xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0)).x + padding;
         xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0)).x - padding;
     }    
-    private void ProcessHit(DmgDealer damageDealer)
+    private void ProcessHit(DmgDealer damageDealer, Vector3 hitPosition, bool isBanana)
     {
         if (damageDealer == null) { return; }
+        if (!isBanana) {
+            GameObject explosion = Instantiate(carExplosion, hitPosition, Quaternion.identity);
+            Destroy(explosion, 1f);
+        }
         health -= damageDealer.GetDamage();
         StaticScoreAndHealth.health = health;
         damageDealer.Hit();
@@ -64,7 +69,8 @@ public class Driver : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         DmgDealer damageDealer = other.gameObject.GetComponent<DmgDealer>();
-        ProcessHit(damageDealer);
+        bool isBanana = other.gameObject.CompareTag("Banana");
+        ProcessHit(damageDealer, other.transform.position, isBanana);
         
     }
 }

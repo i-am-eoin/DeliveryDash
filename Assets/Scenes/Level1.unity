@@ -952,6 +952,10 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1101244992}
+    - target: {fileID: 4308353618764330795, guid: e00347150362fb54e896cd862c7f4166, type: 3}
+      propertyPath: carExplosion
+      value: 
+      objectReference: {fileID: 6819755576234276619, guid: c498fdb653896794a91d7e773bac7513, type: 3}
     - target: {fileID: 6165811810412113716, guid: e00347150362fb54e896cd862c7f4166, type: 3}
       propertyPath: m_Name
       value: Driver
